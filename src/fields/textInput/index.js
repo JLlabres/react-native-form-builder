@@ -31,6 +31,7 @@ export default class TextInputField extends Component {
                 style={{
                   height: inputProps && inputProps.multiline && (Platform.OS === 'ios' ? undefined : null),
                   padding: 0,
+                  color: theme.textInputIconColor,
                 }}
                 ref={(c) => { this.textInput = c; }}
                 underlineColorAndroid="transparent"
