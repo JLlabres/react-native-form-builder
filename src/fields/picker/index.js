@@ -35,7 +35,7 @@ export default class PickerField extends Component {
           </View>
           <View style={{ flex: 3 }}>
             <Picker
-              style={{ padding: 2 }}
+              style={{ padding: 2, color: theme.pickerColorSelected }}
               textStyle={{ color: theme.pickerColorSelected }}
               iosHeader="Select one"
               mode={attributes.mode}
