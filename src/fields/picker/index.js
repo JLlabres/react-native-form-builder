@@ -13,7 +13,7 @@ export default class PickerField extends Component {
   }
   handleChange(value) {
     const attributes = this.props.attributes;
-    this.props.updateValue(attributes.name, attributes.options[value]);
+    this.props.updateValue(attributes.name, value);
   }
   render() {
     const { theme, attributes, ErrorComponent } = this.props;
