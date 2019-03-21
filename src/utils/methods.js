@@ -60,7 +60,7 @@ export function getDefaultValue(field) {
       if ((field.options).indexOf(field.defaultValue) !== -1) {
         return field.defaultValue;
       }
-      return field.options[0];
+      return null;
     }
     case 'select': {
       if (Array.isArray(field.defaultValue)) {
