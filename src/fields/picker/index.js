@@ -17,6 +17,7 @@ export default class PickerField extends Component {
   }
   render() {
     const { theme, attributes, ErrorComponent } = this.props;
+    const hasError = attributes.error
     const isValueValid = attributes.options.indexOf(attributes.value) > -1;
     const pickerValue = attributes.options.indexOf(attributes.value).toString();
     let options = attributes.options;
@@ -24,12 +25,14 @@ export default class PickerField extends Component {
       <View
         style={{...styles.pickerMainAndroid, ...{
           backgroundColor: theme.pickerBgColor,
-          borderBottomColor: theme.inputBorderColor,
+          borderBottomColor: hasError ? ( theme.errorMsgColor || "#ed2f2f" ) : theme.inputBorderColor,
           borderBottomWidth: theme.borderWidth,
         }}}
       >
         <View style={{ flex: 7 }}>
-          <Text style={{ color: theme.inputColorPlaceholder }}>{attributes.label}</Text>
+          <Text style={{
+            color: hasError ? ( theme.errorMsgColor || "#ed2f2f" ) : theme.inputColorPlaceholder
+          }}>{attributes.label}</Text>
         </View>
         <View style={{ flex: 3 }}>
           <RNPickerSelect
